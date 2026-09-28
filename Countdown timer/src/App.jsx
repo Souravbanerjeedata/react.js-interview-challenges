@@ -3,6 +3,7 @@ import "./index.css";
 
 function App() {
   const [isStart, setIsStart] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
@@ -19,6 +20,14 @@ function App() {
 
   function handleReset() {
     setIsStart(false);
+    resetTimer();
+  }
+
+  function resetTimer() {
+    setSeconds(0);
+    setMinutes(0);
+    setHours(0);
+    clearInterval(timer);
   }
 
   function handleInput(e) {
@@ -34,6 +43,15 @@ function App() {
     }
   }
 
+  function handlePause() {
+    setIsPaused(true);
+    clearInterval(timer);
+  }
+  function handleResume() {
+    setIsPaused(false);
+    runTimer(hours, minutes, seconds);
+  }
+
   function runTimer(hr, min, sec, tid) {
     if (sec > 0) {
       setSeconds((s) => s - 1);
@@ -46,10 +64,8 @@ function App() {
       setSeconds(59);
     }
     if (sec === 0 && min === 0 && hr === 0) {
-      setSeconds(0);
-      setMinutes(0);
-      setHours(0);
-      clearInterval(tid);
+      resetTimer();
+      alert("Your countdown has completed");
     }
   }
 
@@ -103,7 +119,11 @@ function App() {
               <div>{seconds < 10 ? `0${seconds}` : seconds}</div>
             </div>
             <div className="btn-container">
-              <button>Pause</button>
+              {!isPaused ? (
+                <button onClick={handlePause}>Pause</button>
+              ) : (
+                <button onClick={handleResume}>Resume</button>
+              )}
               <button onClick={handleReset}>Reset</button>
             </div>
           </div>
