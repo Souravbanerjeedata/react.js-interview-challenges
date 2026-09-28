@@ -11,6 +11,7 @@ function App() {
   function handleStart() {
     if (hours < 0 || minutes < 0 || seconds <= 0) {
       alert("Invalid Input!");
+      12;
       return;
     }
     setIsStart(true);
