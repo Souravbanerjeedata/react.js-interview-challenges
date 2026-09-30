@@ -1,10 +1,12 @@
 import FAQComp from "./FAQComp";
 import "./index.css";
 
-export const App = () => {
+const App = () => {
   return (
     <div>
       <FAQComp />
     </div>
   );
 };
+
+export default App;

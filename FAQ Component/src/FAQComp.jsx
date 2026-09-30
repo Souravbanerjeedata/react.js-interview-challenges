@@ -20,7 +20,7 @@ function FAQComp() {
   return (
     <div>
       {faqs.map((faq, index) => {
-        return <FAQItem faq={faq} index={index} />;
+        return <FAQItem faq={faq} index={index} key={index} />;
       })}
     </div>
   );
