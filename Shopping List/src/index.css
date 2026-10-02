@@ -1,0 +1,10 @@
+ul {
+  list-style: none;
+  height: 75px;
+  overflow-y: auto;
+}
+
+.tick {
+  text-decoration: line-through;
+  color: gray;
+}
