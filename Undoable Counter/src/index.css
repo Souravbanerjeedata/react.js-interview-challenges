@@ -1,0 +1,19 @@
+.app,
+.action-btn,
+.increase-decrease-btn,
+.history-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  gap: 5px;
+}
+.history-box {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  overflow-y: auto;
+}
+.history-row {
+  justify-content: space-around;
+}
