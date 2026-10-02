@@ -82,7 +82,7 @@ const App = () => {
                 <div className="history-row">
                   <div>{history.action}</div>
                   <div>
-                    ({history.prev} {"->"} {history.current})
+                    ({history.prev} {"→"} {history.current})
                   </div>
                 </div>
               );

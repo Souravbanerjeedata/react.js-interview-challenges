@@ -1,3 +1,92 @@
-.rotate {
-  transform: rotate(90deg);
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #202a35;
+  background: #f5f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+}
+#root {
+  width: min(100%, 660px);
+}
+#root > div {
+  padding: clamp(24px, 5vw, 48px);
+  border: 1px solid #e6eaf1;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 24px 70px #25365312;
+}
+
+#root > div::before {
+  content: "Frequently asked questions";
+  display: block;
+  margin-bottom: 24px;
+  color: #1d2938;
+  font:
+    800 clamp(23px, 4vw, 30px)/1.2 "Manrope",
+    sans-serif;
+}
+.container {
+  border-top: 1px solid #edf0f5;
+}
+.question-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 64px;
+}
+.question-box button {
+  display: grid;
+  place-items: center;
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid #e5e9f2;
+  border-radius: 50%;
+  background: #f7f8fc;
+  color: #6677d4;
+  font:
+    600 19px/1 "DM Sans",
+    sans-serif;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    background 0.2s,
+    color 0.2s;
+}
+.question-box button:hover,
+.question-box button.rotate {
+  background: #6879d7;
+  color: white;
+}
+.question-box button.rotate {
+  transform: rotate(180deg);
+}
+.question {
+  color: #283443;
+  font-size: 15px;
+  font-weight: 600;
+}
+.answer {
+  margin: -2px 0 20px 44px;
+  color: #657184;
+  font-size: 14px;
+  line-height: 1.7;
+  white-space: pre-line;
 }

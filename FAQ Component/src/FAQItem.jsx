@@ -16,7 +16,7 @@ function FAQItem({ faq, index }) {
     <div className="container">
       <div className="question-box">
         <button className={isShow ? "rotate" : ""} onClick={clickHandler}>
-          {">"}
+          {"⏷"}
         </button>
         <div className="question">{faq.question}</div>
       </div>
