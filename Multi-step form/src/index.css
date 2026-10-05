@@ -1,0 +1,165 @@
+:root {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #eff3eb;
+  background: #111914;
+  --mint: #c7f36a;
+  --muted: #89958a;
+  --card: rgba(28, 38, 30, 0.92);
+  --border: rgba(226, 242, 218, 0.12);
+  --input-bg: #141c16;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(61, 85, 58, 0.3), transparent 55%),
+    linear-gradient(145deg, #111914 0%, #17211a 55%, #101713 100%);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+h1 {
+  margin: 0 0 28px;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: clamp(28px, 5vw, 36px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: #f1f6eb;
+  text-align: center;
+}
+
+form {
+  width: min(100%, 420px);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 36px 32px 32px;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+form a {
+  color: var(--mint);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  align-self: flex-start;
+  margin-bottom: 4px;
+  transition: opacity 0.15s ease;
+}
+
+form a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+input {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  background: var(--input-bg);
+  border: 1px solid #344136;
+  border-radius: 12px;
+  color: #f5f7f0;
+  font-size: 16px;
+  outline: none;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+input::placeholder {
+  color: #6b7a6c;
+}
+
+input:focus {
+  border-color: var(--mint);
+  box-shadow: 0 0 0 3px rgba(199, 243, 106, 0.15);
+}
+
+button {
+  margin-top: 10px;
+  height: 50px;
+  border: none;
+  border-radius: 12px;
+  background: var(--mint);
+  color: #182013;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 8px 24px rgba(199, 243, 106, 0.15);
+}
+
+button:hover {
+  background: #d7ff8a;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(199, 243, 106, 0.25);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Submitted state */
+.submitted {
+  width: min(100%, 420px);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px 32px;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+.submitted h1 {
+  margin-bottom: 24px;
+  color: var(--mint);
+  font-size: 28px;
+}
+
+.submitted p {
+  margin: 12px 0;
+  font-size: 15px;
+  color: var(--muted);
+  text-align: left;
+}
+
+.submitted span {
+  color: #f1f6eb;
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+@media (max-width: 480px) {
+  form,
+  .submitted {
+    padding: 28px 20px;
+  }
+}

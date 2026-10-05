@@ -1,0 +1,126 @@
+:root {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #eff3eb;
+  background: #111914;
+  --mint: #c7f36a;
+  --muted: #89958a;
+  --card: rgba(28, 38, 30, 0.9);
+  --border: rgba(226, 242, 218, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      ellipse at 50% 35%,
+      rgba(61, 85, 58, 0.28),
+      transparent 55%
+    ),
+    linear-gradient(135deg, #111914 0%, #17211a 50%, #101713 100%);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 32px;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: clamp(28px, 5vw, 38px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: #f1f6eb;
+}
+
+.container {
+  width: min(100%, 720px);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+}
+
+.container > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.container img {
+  width: min(100%, 520px);
+  height: 340px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  transition: opacity 0.3s ease;
+}
+
+.container button {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #303b31;
+  color: #e8f0e2;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+  flex-shrink: 0;
+}
+
+.container button:hover {
+  background: var(--mint);
+  color: #182013;
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(199, 243, 106, 0.25);
+}
+
+.container button:active {
+  transform: scale(0.96);
+}
+
+.container > div:first-child {
+  /* Loading state */
+  color: var(--muted);
+  font-size: 16px;
+  padding: 80px 20px;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 16px;
+  }
+
+  .container img {
+    height: 240px;
+  }
+
+  .container button {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+
+  .container > div {
+    gap: 10px;
+  }
+}
