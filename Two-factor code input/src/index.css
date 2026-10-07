@@ -1,0 +1,11 @@
+input {
+  outline: none;
+}
+
+input:focus {
+  border: 1px solid blue;
+}
+
+.error {
+  border: 2px solid red;
+}
