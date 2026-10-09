@@ -1,11 +1,26 @@
-input {
-  outline: none;
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #253044;
+  background: #f3f6fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-input:focus {
-  border: 1px solid blue;
-}
-
-.error {
-  border: 2px solid red;
-}
+* { box-sizing: border-box; }
+body { min-width: 320px; min-height: 100vh; margin: 0; display: grid; place-items: center; padding: 24px; }
+#root { width: min(100%, 500px); }
+.app { padding: clamp(26px, 6vw, 44px); border: 1px solid #e5eaf2; border-radius: 24px; background: #fff; box-shadow: 0 24px 70px #25365314; text-align: center; }
+h1 { margin: 0 0 30px; color: #202c3c; font-size: clamp(23px, 5vw, 29px); font-weight: 750; letter-spacing: -.035em; }
+.input-box { display: flex; justify-content: center; gap: clamp(9px, 3vw, 15px); margin-bottom: 28px; }
+input { width: clamp(54px, 15vw, 68px); height: clamp(60px, 17vw, 76px); padding: 0; border: 1px solid #dfe5ef; border-radius: 13px; outline: none; background: #f9fafe; color: #29354a; text-align: center; font: 700 clamp(25px, 8vw, 34px)/1 ui-sans-serif, system-ui, sans-serif; caret-color: #586fd5; transition: border-color .16s, box-shadow .16s, background .16s; }
+input:focus { border: 1px solid #6378dc; background: #fff; box-shadow: 0 0 0 4px #6378dc20; }
+input.error { border: 2px solid #dc6666; background: #fff8f8; box-shadow: 0 0 0 3px #dc66661a; }
+input.error:focus { border-color: #dc6666; }
+.app > button { min-width: 148px; min-height: 47px; padding: 0 24px; border: 0; border-radius: 10px; background: #5369d7; color: #fff; font: 700 14px ui-sans-serif, system-ui, sans-serif; cursor: pointer; box-shadow: 0 7px 17px #5369d733; transition: transform .15s, background .15s, box-shadow .15s; }
+.app > button:hover { transform: translateY(-1px); background: #4359c5; box-shadow: 0 9px 20px #5369d744; }
+.app > button:focus-visible { outline: 3px solid #aab5ff; outline-offset: 3px; }
+.app > button:active { transform: translateY(0); }
+@media (max-width: 360px) { .input-box { gap: 7px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: .01ms !important; } }

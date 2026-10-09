@@ -9,14 +9,16 @@ const App = () => {
       <h1>Star Rating</h1>
       <div>
         {[1, 2, 3, 4, 5].map((num) => {
+          const isFilled = num <= ((rating && hover) || hover);
           return (
             <button
               key={num}
+              className={isFilled ? "star-filled" : "star-empty"}
               onClick={() => setRating(num)}
               onMouseOver={() => setHover(num)}
               onMouseLeave={() => setHover(rating)}
             >
-              {num <= ((rating && hover) || hover) ? "★" : "☆"}
+              {isFilled ? "★" : "☆"}
             </button>
           );
         })}
@@ -26,3 +28,4 @@ const App = () => {
 };
 
 export default App;
+
